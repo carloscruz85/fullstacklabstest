@@ -11,6 +11,7 @@ import { styled } from "@mui/material/styles";
 import colors from "../constants/colors";
 import Status from "./Status";
 import { Node as NodeType } from "../types/Node";
+import Blocks from "./Blocks";
 
 type Props = {
   node: NodeType;
@@ -60,6 +61,7 @@ const TypographySecondaryHeading = styled(Typography)(({ theme }) => ({
 }));
 
 const Node: React.FC<Props> = ({ node, expanded, toggleNodeExpanded }) => {
+  // console.log(node);
   return (
     <AccordionRoot
       elevation={3}
@@ -80,7 +82,11 @@ const Node: React.FC<Props> = ({ node, expanded, toggleNodeExpanded }) => {
         </BoxSummaryContent>
       </AccordionSummaryContainer>
       <AccordionDetails>
-        <Typography>Blocks go here</Typography>
+        {node.online ? (
+          <Blocks url={node.url} />
+        ) : (
+          <Typography>Blocks go here</Typography>
+        )}
       </AccordionDetails>
     </AccordionRoot>
   );

@@ -31,3 +31,15 @@ input.small {
 td.fuel-savings-label {
   width: 175px;
 }
+
+.datablock {
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 0.2rem;
+  margin: 0.2rem;
+  font-size: 0.5rem !important;
+  padding: 0.5rem;
+}
+
+.datablock .id {
+  color: #0277ca;
+}
